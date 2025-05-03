@@ -43,10 +43,17 @@ char character(char start, int offset) {
 int main()
 {
 	try {
-		cout << "character ('a', 1): " << character("a", 1) << endl;
+		cout << "character ('a', 1): " << character('a', 1) << endl;
 	}
-	catch (exception& e{
-		cout<<"character throw exception" <<
-		})
-   return 0;
+	catch (invalidCharacterException& error) {
+		cout << "Character threw exception: " << error.message << endl;
+	}
+	catch (invalidRangeException& error) {
+		cout << "Character threw exception: " << error.message << endl;
+	}
+
+	return 0;
 }
+
+
+
